@@ -7,7 +7,6 @@ const BookingPage = () => {
 
   useEffect(() => {
     const getData = localStorage.getItem("update");
-
     const parse = JSON.parse(getData);
     setData(parse);
   }, [setData]);
@@ -19,6 +18,7 @@ const BookingPage = () => {
       time: data?.show?.schedule?.time,
       country: data?.show?.network?.country?.name,
     };
+
     const bookingData = localStorage.setItem(
       "booking",
       JSON.stringify(booking)
@@ -28,7 +28,7 @@ const BookingPage = () => {
 
   return (
     <div>
-      <section className="p-6 bg-gray-800 text-gray-50">
+      <section className="p-6 py-16 bg-gray-800 text-gray-50">
         <form
           noValidate=""
           action=""
