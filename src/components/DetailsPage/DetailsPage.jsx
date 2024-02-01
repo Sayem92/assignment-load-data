@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import Loading from "../../Loading/Loading";
 
 const DetailsPage = () => {
   const { id } = useParams();
@@ -23,7 +24,7 @@ const DetailsPage = () => {
     const setData = localStorage.setItem("update", JSON.stringify(showData));
   };
 
-  if (!showData) return <div>Loading...</div>;
+  if (!showData) return <Loading></Loading>;
 
   return (
     <div className="dark:bg-black md:py-10">
