@@ -3,6 +3,7 @@ import Main from "../layout/Main";
 import Home from "../components/home/Home";
 import ErrorPage from "../components/Errorpage/ErrorPage";
 import DetailsPage from "../components/DetailsPage/DetailsPage";
+import BookingPage from "../components/BookingPage/BookingPage";
 
 export const router = createBrowserRouter([
   {
@@ -20,9 +21,13 @@ export const router = createBrowserRouter([
         element: <Home></Home>,
       },
       {
-        path: 'summary/:id',
-        element: <DetailsPage></DetailsPage>
-    },
+        path: "summary/:id",
+        element: <DetailsPage></DetailsPage>,
+      },
+      {
+        path: "booking/:id",
+        element: <BookingPage></BookingPage>,
+      },
     ],
   },
 ]);

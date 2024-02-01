@@ -18,6 +18,11 @@ const DetailsPage = () => {
       });
   }, [id]);
 
+  // set data local storage
+  const setDataStorage = () => {
+    const setData = localStorage.setItem("update", JSON.stringify(showData));
+  };
+
   if (!showData) return <div>Loading...</div>;
 
   return (
@@ -46,13 +51,17 @@ const DetailsPage = () => {
               >
                 Site
               </a>
-              <span className="mr-20 text-black">Rating: {showData?.show?.rating?.average}</span>
-              <span className="text-black">Country: {showData?.show?.network?.country?.name}</span>
+              <span className="mr-20 text-black">
+                Rating: {showData?.show?.rating?.average}
+              </span>
+              <span className="text-black">
+                Country: {showData?.show?.network?.country?.name}
+              </span>
             </div>
             <p className="text-xl">{showData?.show?.summary}</p>
 
             <div className="m-6 justify-center">
-              <Link to={`/booking/${id}`}>
+              <Link to={`/booking/${id}`} onClick={setDataStorage}>
                 <button className="btn p-4 rounded-sm font-semibold text-white border-none bg-gradient-to-r from-green-500 to-blue-500 hover:transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300">
                   Booking Ticket
                 </button>
