@@ -32,7 +32,7 @@ const HomeCard = ({ show }) => {
                 type="button"
                 className=" px-8 py-3 mt-4 font-semibold border-none rounded border-gray-100 text-gray-100 bg-green-500"
               >
-                Summary
+                Details
               </button>
             </Link>
           </div>
